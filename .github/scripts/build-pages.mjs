@@ -27,6 +27,12 @@ function configure(theme, directory) {
   const base = theme.mount ? `\n  base: "/${theme.mount}",` : "";
   source = source.replace(/export default defineConfig\(\{/, (match) => `${match}${base}`);
   source = source.replace(/site:\s*["'][^"']+["']/, 'site: "https://exileonstreet.github.io"');
+  if (theme.name === "design-photography-portfolio") {
+    source = source.replace(
+      'import { visualizer } from "rollup-plugin-visualizer";',
+      'import fs from "node:fs";\nimport { visualizer } from "rollup-plugin-visualizer";'
+    );
+  }
   writeFileSync(config, source);
 
   if (theme.name !== "entropic") return;
