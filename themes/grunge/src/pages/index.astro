@@ -1,0 +1,22 @@
+---
+// layout
+import Layout from '../layouts/Layout.astro';
+
+// components
+import Hero from '../components/sections/home/Hero.astro';
+import SelectedWorks from '../components/sections/home/SelectedWorks.astro';
+import Services from '../components/sections/home/Services.astro';
+import About from '../components/sections/home/About.astro';
+import Faq from '../components/sections/home/Faq.astro';
+---
+
+<Layout 
+    title="Home"
+    description="Portfolio template with a grunge aesthetic."
+>
+    <Hero />
+    <SelectedWorks />
+    <Services />
+    <About />
+    <Faq />
+</Layout>
